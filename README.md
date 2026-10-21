@@ -1,0 +1,106 @@
+# A Beginner's Guide to Python Programming
+
+*A workshop for **Mentoring Math Minds** program at Saint Louis University.*
+
+The workshop is designed to introduce the fundamentals of Python programming in an engaging and interactive way. Participants will learn key concepts such as variables, data types, basic operations, and control flow structures like loops and conditional statements. They will also explore essential data structures such as lists and dictionaries, and understand how to write reusable code using functions. The workshop includes hands-on exercises and a mini-project. By the end of the session, participants will have the foundational skills to start coding confidently and continue exploring Python independently.
+
+#### Workshop Materials:
+You can find the workshop materials in the following Jupyter notebooks in this repository:
+- [Session 1: Python Programming Basics](https://github.com/ashki23/python-workshop-basics/blob/main/python_workshop_basics_1.ipynb)
+- [Session 2: Data Analysis Basics](https://github.com/ashki23/python-workshop-basics/blob/main/python_workshop_basics_2.ipynb)
+
+## Session 1: Python Programming Basics
+In this session, we cover the following topics from [The Python Tutorial](https://docs.python.org/3/tutorial/index.html).
+
+- **Introduction and Set up**: Setting up the environment, and how to run Python (section [2](https://docs.python.org/3/tutorial/interpreter.html) and [12](https://docs.python.org/3/tutorial/venv.html)).
+- **Variables and Data Types**: Numbers, text, lists, arithmetic, and comparisons (section [3](https://docs.python.org/3/tutorial/introduction.html)).
+- **Control Flow Tools**: `if`, `else`, and `elif` statements and `for` and `while` loops (section [4](https://docs.python.org/3/tutorial/controlflow.html)).
+- **Functions**: Defining, using parameters, and return values (section [4](https://docs.python.org/3/tutorial/controlflow.html)).
+- **Data Structures**: Lists, dictionaries, tuples, and sets (section [5](https://docs.python.org/3/tutorial/datastructures.html)).
+- **Modules**: Import modules from the standard library, installed packages, or custom Python scripts (section [6](https://docs.python.org/3/tutorial/modules.html)).
+- **Input and Output**: Print, f-strings, strings, open, read and write functions (section [7](https://docs.python.org/3/tutorial/inputoutput.html)).
+- **Mini-Project**: Practical application of learned concepts.
+
+## Session 2: Data Analysis Basics
+The second notebook extends the first session with real-world data analysis using NumPy, Pandas, and Matplotlib.
+
+- **NumPy Basics**: arrays, indexing, slicing, vectorized operations, and statistics.
+- **Pandas Series**: creation, labeled indexing, and basic aggregation.
+- **Pandas DataFrames**: loading data, selection, filtering, grouping, and summarization.
+- **Plotting**: line, bar, scatter, and histogram plots using pandas/matplotlib.
+- **Mini-Project**: Iris dataset analysis with groupby, filtering, and visualization.
+
+## Setup the environment
+**For this workshop, we primarily use [Colab](https://colab.research.google.com/), a free, cloud-based Jupyter Notebook environment that runs Python directly in your browser — no local installation required!** 
+
+However, if you prefer to set up a local development environment on your computer, you can install Python and VS Code by following the instructions below.
+
+#### Install Python
+- **Linux**: Python is typically preinstalled on most Linux distributions.
+- **macOS**: Follow [section 5.1.1](https://docs.python.org/3/using/mac.html#installation-steps). Alternatively, if you have a package manager like [Homebrew](https://brew.sh), you can use it to install Python. 
+- **Windows**: Refer to [section 4.1.1](https://docs.python.org/3/using/windows.html#installation-steps) in the Python documentation. Be sure to check the option "Add Python to PATH" during installation. Alternatively, if you have [WSL](https://learn.microsoft.com/en-us/windows/wsl/about) installed, you can use Python in WSL. 
+
+#### Install Visual Studio Code  
+Download and install Visual Studio Code (VS Code) from [code.visualstudio.com/Download](https://code.visualstudio.com/Download). VS Code is a free, powerful integrated development environment (IDE) that supports Python scripting, Jupyter Notebooks, terminal commands, and file management. After installation, install the official Python extension from Microsoft for enhanced Python support. VS Code also integrates well with GitHub Copilot for AI-assisted coding (see [GitHub Copilot tutorials](https://github.com/features/copilot/tutorials)).
+
+## Using Python
+Python can be used in two primary ways:
+
+1. **Interactive Mode:** Open your terminal and type `python` or `python3` to launch the Python interpreter interactively. You can exit the interpreter by pressing `Control-D` on Unix, or by typing `quit()`.
+
+2. **Running a Python Script:** Write your Python code in a script file and execute it from the terminal. For instance, to run `script.py` use the following command in the terminal: 
+   ```bash
+   python3 script.py
+   ```
+
+When using IDEs like Jupyter Notebook, you are primarily working in interactive mode. However, for solving larger problems and real-world programming, it is usually more efficient to create a Python script and run it in a dedicated environment, such as on an HPC system or in the cloud (or locally). Typically, this involves creating a virtual environment or a container with the necessary requirements.
+
+## Packages
+To run Python projects locally, it's best practice to create a dedicated virtual environment for each project to manage dependencies. To create and activate a virtual environment (called `.venv`), use the following commands in the terminal:
+
+```bash 
+# Create the virtual environment
+# You may need to run `sudo apt-get install python3-venv` first on Debian-based OSs
+python3 -m venv .venv
+
+# Activate the virtual environment
+source .venv/bin/activate
+```
+
+Alternatively, you can use VS Code to manage virtual environments (see [here](https://code.visualstudio.com/docs/python/environments#_using-the-create-environment-command)). To remove a virtual environment, either run `rm -rf .venv` in the terminal or manually delete the `.venv` folder from the file explorer.
+
+We can use the `pip` package manager to manage Python packages. The following commands can be used in the terminal to install, upgrade, or uninstall packages:
+
+```bash
+# Install a package
+pip install <pkg-name>
+
+# Install multiple packages using a requirements file
+pip install -r requirements.txt 
+
+# Upgrade a package
+pip install --upgrade <pkg-name>
+
+# Uninstall a package
+pip uninstall <pkg-name>
+
+# List installed packages
+pip list
+
+# Create a requirements file from the installed packages
+pip freeze > requirements.txt 
+
+# Cache management
+pip cache info # view cache information 
+pip cache purge # remove cache files
+```
+
+Make sure to replace `<pkg-name>` with the actual package name. For testing, let's install and uninstall the `sampleproject` package:
+
+```bash
+# Install
+pip install sampleproject
+
+# Uninstall
+pip uninstall sampleproject
+```
